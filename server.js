@@ -11,6 +11,6 @@ require('./server/config/mongoose.js');
 //require routes and pss it app
 require('./server/config/routes.js')(app); //require code from routes and pass it app to use in routing
 
-app.listen(5000, function(){
+app.listen(8000, function(){
 	console.log('BOOM YEAH SON!');
 })
