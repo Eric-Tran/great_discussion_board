@@ -15,7 +15,7 @@
 	<br>
 	<div ng-repeat='post in topic.posts'>
 		<h4><a href ng-click='goUser(post.user)'>{{post.user}}:</a> {{post.post}}</h4>
-			<p style='text-indent: 50px' ng-repeat='comment in post.comments'>{{comment.user}}: {{comment.comment}}</p>
+			<p style='text-indent: 50px' ng-repeat='comment in post.comments'><a href ng-click='goUser(comment.user)'>{{comment.user}}:</a> {{comment.comment}}</p>
 		<textarea rows='3' style='width:50%' ng-model='new_comment' class='form-control'></textarea>
 		<br>
 		<button class='btn btn-primary' ng-click='addComment(post._id, new_comment, $index)'>Comment</button>
