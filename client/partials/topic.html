@@ -5,13 +5,13 @@
 	<h3>{{topic.topic}}</h3>
 	<h4>{{topic.description}}</h4>
 	<br>
-	<h4>Post Your Answer Here:</h4>
+	<h4>Post Reply</h4>
 	<textarea rows='3' style='width:50%' ng-model ='new_post.post'class='form-control'></textarea>
 	<br>
 	<button class='btn btn-primary' ng-click='addPost()'>Post</button>
 	<br>
 	<hr style='border: 1px solid black'>
-	<h3>Answers</h3>
+	<h3>Replies</h3>
 	<br>
 	<div ng-repeat='post in topic.posts'>
 		<h4><a href ng-click='goUser(post.user)'>{{post.user}}:</a> {{post.post}}</h4>
