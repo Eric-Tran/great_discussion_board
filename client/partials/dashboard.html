@@ -1,0 +1,52 @@
+<div ng-controller='dashboardController'> 
+	<h2 class='text-center'>Welcome {{user}}!</h2>
+	<div class='pull-right'>
+		<a href='#/'>&nbsp Logout</a>
+	</div>
+	<br>
+	<input type='text' class='form-control input-sm' placeholder='Search Question' style='width: 25%' ng-model='topic_filter'>
+	<br>
+	<table class ='table table-striped table-bordered table-condensed'>
+		<thead>
+			<tr>
+				<th>Category</th>
+				<th>Topic</th>
+				<th>User Name</th>
+				<th>Posts</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat='topic in topics | filter: topic_filter'>
+				<td>{{topic.category}}</td>
+				<td><a href ng-click='goTopic(topic._id)'>{{topic.topic}}</a></td>
+				<td><a href ng-click='goUser(topic.user)'>{{topic.user}}</a></td>
+				<td>{{topic.posts.length}}</td>
+			</tr>
+		</tbody>
+	</table>
+	<br>
+	<hr>
+	<h4>Add A New Topic</h4>
+	<form>
+		<div class='form-group'>
+			<label for='question'>Topic</label>
+			<input type='text'style='width: 50%' placeholder='Enter Topic' ng-model='new_topic.topic' class='form-control'>
+		</div>
+		<div class='form-group'>
+			<label for='desc.'>Description (optional)</label>
+			<textarea class='form-control' style='width: 50%' rows='5' ng-model='new_topic.description'></textarea>
+		</div>
+		<div class='form-group'>
+			<label for='cat'>Category</label>
+			<select class='form-control' style='width: 50%' ng-model='new_topic.category'>
+				<option>Politics</option>
+				<option>News</option>
+				<option>Sports</option>
+				<option>Entertainment</option>
+				<option>Misc.</option>
+			</select>
+		</div>
+			<button ng-click='addTopic()' class='btn btn-primary'>Submit</button>
+	</form>
+	<br>
+</div>

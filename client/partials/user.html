@@ -1,0 +1,13 @@
+<div ng-controller='userController'>
+	<div class='pull-right'>
+		<a href ng-click ='goDashboard()'>Dashboard &nbsp</a> | <a href='#/'>&nbsp Logout</a>
+	</div>
+	<br>
+	<div class='text-left'>
+	<h3>User Name: {{userInfo.name}} </h3>
+	<h4>Posted..</h4>
+	<p>{{userInfo.topicCount}} Topic</p>
+	<p>{{userInfo.postCount}} Posts</p>
+	<p>{{userInfo.commentCount}} Comment/s</p>
+	</div>
+</div>

@@ -1,0 +1,25 @@
+<div ng-controller='topicController'>
+	<div class='pull-right'>
+		<a href ng-click ='goDashboard()'>Dashboard &nbsp</a> | <a href='#/'>&nbsp Logout</a>
+	</div>
+	<h3>{{topic.topic}}</h3>
+	<h4>{{topic.description}}</h4>
+	<br>
+	<h4>Post Your Answer Here:</h4>
+	<textarea rows='3' style='width:50%' ng-model ='new_post.post'class='form-control'></textarea>
+	<br>
+	<button class='btn btn-primary' ng-click='addPost()'>Post</button>
+	<br>
+	<hr style='border: 1px solid black'>
+	<h3>Answers</h3>
+	<br>
+	<div ng-repeat='post in topic.posts'>
+		<h4><a href ng-click='goUser(post.user)'>{{post.user}}:</a> {{post.post}}</h4>
+			<p style='text-indent: 50px' ng-repeat='comment in post.comments'>{{comment.user}}: {{comment.comment}}</p>
+		<textarea rows='3' style='width:50%' ng-model='new_comment' class='form-control'></textarea>
+		<br>
+		<button class='btn btn-primary' ng-click='addComment(post._id, new_comment, $index)'>Comment</button>
+	<br>
+	<hr> 
+	</div>
+</div>
